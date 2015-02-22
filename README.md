@@ -1,5 +1,8 @@
 Yii2 ScrollMagic
 ================
+[![Latest Stable Version](https://poser.pugx.org/claudejanz/yii2-scrollmagic/v/stable.svg)](https://packagist.org/packages/claudejanz/yii2-scrollmagic) [![Total Downloads](https://poser.pugx.org/claudejanz/yii2-scrollmagic/downloads.svg)](https://packagist.org/packages/claudejanz/yii2-scrollmagic) [![Latest Unstable Version](https://poser.pugx.org/claudejanz/yii2-scrollmagic/v/unstable.svg)](https://packagist.org/packages/claudejanz/yii2-scrollmagic) [![License](https://poser.pugx.org/claudejanz/yii2-scrollmagic/license.svg)](https://packagist.org/packages/claudejanz/yii2-scrollmagic)
+
+
 Yii2 ScrollMagic integration
 
 Installation

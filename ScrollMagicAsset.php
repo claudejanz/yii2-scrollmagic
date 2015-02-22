@@ -9,9 +9,9 @@ use yii\web\AssetBundle;
  */
 class ScrollMagicAsset extends AssetBundle
 {
-    public $sourcePath = '@bower/gsap/src';
+    public $sourcePath = '@bower/ScrollMagic/ScrollMagic/minified';
     public $js = [
         //'minified/jquery.gsap.min.js',
-        'minified/TweenMax.min.js',
+        'ScrollMagic.min.js',
     ];
 }

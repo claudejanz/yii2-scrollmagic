@@ -13,11 +13,19 @@ namespace claudejanz\scrollmagic;
  *
  * @author Claude
  */
-class ScrollMagic extends ScrollWidget{
+class ScrollMagic extends ScrollWidget {
+
     public function init() {
         parent::init();
-        
-        $this->setJs('var '.$this->id.' = new ScrollMagic();');
+
+        $this->setJs('var ' . $this->id . ' = new ScrollMagic();');
     }
-   
+
+    public function addScene($scenes) {
+        foreach ($scenes as $key => $scene) {
+
+            $this->setJs($this->id . '.addScene(' . $scene . ');');
+        }
+    }
+
 }

@@ -8,16 +8,19 @@
 
 namespace claudejanz\scrollmagic;
 
+use yii\base\Widget;
+
 /**
  * Description of ScrollMagic
  *
  * @author Claude
  */
-class ScrollMagic extends ScrollWidget{
+class ScrollWidget extends Widget{
     public function init() {
         parent::init();
-        
-        $this->setJs('var '.$this->id.' = new ScrollMagic();');
+        ScrollMagicAsset::register( $this->getView());
     }
-   
+     public function setJs($content){
+        $this->view->registerJs($content);
+    }
 }

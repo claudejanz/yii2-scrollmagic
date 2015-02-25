@@ -18,7 +18,7 @@ class ScrollMagic extends ScrollWidget {
     public function init() {
         parent::init();
 
-        $this->setJs('var ' . $this->id . ' = new ScrollMagic();');
+        $this->setJs('var ' . $this->id . ' = new ScrollMagic();'."\n");
     }
 
     public function addScene($scenes) {

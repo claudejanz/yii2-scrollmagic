@@ -18,7 +18,7 @@ use yii\base\Widget;
 class ScrollWidget extends Widget{
     public function init() {
         parent::init();
-        ScrollMagicAsset::register( $this->getView());
+        ScrollMagicAsset::register($this->getView());
     }
      public function setJs($content){
         $this->view->registerJs($content);

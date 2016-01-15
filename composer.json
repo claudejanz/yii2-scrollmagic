@@ -13,7 +13,6 @@
     "require": {
         "yiisoft/yii2": "*",
         "claudejanz/yii2-gsap": "*",
-        "bower-asset/gsap": "*",
         "bower-asset/ScrollMagic": "*"
     },
     "autoload": {

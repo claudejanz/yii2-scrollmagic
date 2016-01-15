@@ -48,8 +48,8 @@ while ($i < 3) {
     echo Html::beginTag('div', ['class' => 'container']);
     $title = 'Klod.ch';
     echo Html::tag('p', $title, ['class' => 'title', 'id' => 'title_' . $i]);
-    $text = 'Une agence digitale';
-    echo Html::tag('p', $text, ['class' => 'teaser', 'id' => 'teaser_' . $i]);
+    $teaser = 'Une agence digitale';
+    echo Html::tag('p', $teaser, ['class' => 'teaser', 'id' => 'teaser_' . $i]);
     $text = 'Nous développons des applications & des sites Web<br/>
 Société Basée à Prangins';
     echo Html::tag('p', $text, ['class' => 'baseline', 'id' => 'baseline_' . $i]);

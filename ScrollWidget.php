@@ -15,12 +15,11 @@ use yii\base\Widget;
  *
  * @author Claude
  */
-class ScrollWidget extends Widget{
+class ScrollWidget extends Widget {
+
     public function init() {
         parent::init();
         ScrollMagicAsset::register($this->getView());
     }
-     public function addJs($content){
-        $this->view->registerJs($content);
-    }
+
 }

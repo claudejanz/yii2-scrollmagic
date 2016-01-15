@@ -8,6 +8,7 @@
 
 namespace claudejanz\scrollmagic;
 
+use claudejanz\js\JsWidget;
 use yii\helpers\Json;
 
 /**
@@ -15,11 +16,10 @@ use yii\helpers\Json;
  *
  * @author Claude
  */
-class ScrollController extends ScrollWidget {
+class ScrollController extends JsWidget {
 
-     public function __construct($config = []) {
-        parent::init();
-        $this->addJs('var ' . $this->id . ' = new ScrollMagic.Controller('.Json::encode($config).');');
+    public function __construct($config = []) {
+        $this->addJs('var ' . $this->id . ' = new ScrollMagic.Controller(' . Json::encode($config) . ');');
     }
 
     public function addScene($scenes) {

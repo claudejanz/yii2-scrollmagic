@@ -1,5 +1,8 @@
 <?php
 
+use claudejanz\js\JsWidget;
+use yii\helpers\Json;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -8,14 +11,12 @@
 
 namespace claudejanz\scrollmagic;
 
-use yii\helpers\Json;
-
 /**
  * Description of ScrollScene
  *
  * @author Claude
  */
-class ScrollScene extends ScrollWidget {
+class ScrollScene extends JsWidget {
 
     //put your $scene = new ScrollScene(['duration'=> 100])code here
     public $options;
@@ -35,9 +36,7 @@ class ScrollScene extends ScrollWidget {
         return $this;
     }
 
-    public function __toString() {
-        return $this->id;
-    }
+    
 
     public function setTween($target, $time = 1, $options = []) {
         $this->addJs($this->id . '.setTween(' . $target . ');');

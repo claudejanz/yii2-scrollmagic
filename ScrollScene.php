@@ -39,16 +39,13 @@ class ScrollScene extends ScrollWidget {
         return $this->id;
     }
 
-    public function setTween($target) {
-        if (is_string($target) && empty($options)) {
-            $this->addJs($this->id . '.setTween(' . $target . ');');
-        } 
+    public function setTween($target, $time = 1, $options = []) {
+        $this->addJs($this->id . '.setTween(' . $target . ');');
         return $this;
     }
-    
+
     public function setGsapTween($target, $time = 1, $options = []) {
-        
-            $this->addJs($this->id . '.setTween("' . $target . '",' . $time . ',' . Json::encode($options) . ');');
+        $this->addJs($this->id . '.setTween("' . $target . '",' . $time . ',' . Json::encode($options) . ');');
         return $this;
     }
 

@@ -20,7 +20,7 @@ class ScrollWidget extends Widget{
         parent::init();
         ScrollMagicAsset::register($this->getView());
     }
-     public function setJs($content){
+     public function addJs($content){
         $this->view->registerJs($content);
     }
 }

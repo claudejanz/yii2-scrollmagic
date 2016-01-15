@@ -48,16 +48,21 @@ while ($i < 2) {
     $title = 'Klod.ch';
     echo Html::tag('p', $title, ['class' => 'title', 'id' => 'title_' . $i]);
     $text = 'Une agence digitale';
-    echo Html::tag('p', $text, ['class' => 'teaser']);
+    echo Html::tag('p', $text, ['class' => 'teaser', 'id' => 'teaser_' . $i]);
     $text = 'Nous développons des applications & des sites Web<br/>
 Société Basée à Prangins';
-    echo Html::tag('p', $text, ['class' => 'baseline']);
+    echo Html::tag('p', $text, ['class' => 'baseline', 'id' => 'baseline_' . $i]);
     echo Html::endTag('div');
     echo Html::endTag('section');
     
-    // js 
+    // using Gasp extention
     $scene = new ScrollScene(['triggerElement'=>'#title_'.$i]);
-    $scene->setTween('#title_' . $i, 4, ['backgroundColor'=>'red']);
+    $scene->setGsapTween('#title_' . $i, 0.5, ['backgroundColor'=>'red']);
+    $scene->addTo($controller);
+    // first register js then set tween with it object
+    $scene = new ScrollScene(['triggerElement'=>'#title_'.$i]);
+    $scene->addJs("var tween_$i = TweenMax.from('#baseline_$i',0.5,{'autoAlpha':0,x:120});");
+    $scene->setTween('tween_'.$i);
     $scene->addIndicators(['name' => $i . ' (duration: 0)']);
     $scene->addTo($controller);
     $i++;

@@ -21,17 +21,17 @@ class ScrollScene extends ScrollWidget {
     public $options;
 
     public function __construct($config = []) {
-        $this->setJs('var ' . $this->id . ' = new ScrollMagic.Scene(' . Json::encode($config) . ');');
+        $this->addJs('var ' . $this->id . ' = new ScrollMagic.Scene(' . Json::encode($config) . ');');
         parent::init();
     }
 
     public function setPin($param) {
-        $this->setJs($this->id . '.setPin("' . $param . '");');
+        $this->addJs($this->id . '.setPin("' . $param . '");');
         return $this;
     }
 
     public function addTo($param) {
-        $this->setJs($this->id . '.addTo(' . $param->id . ');');
+        $this->addJs($this->id . '.addTo(' . $param->id . ');');
         return $this;
     }
 
@@ -39,8 +39,16 @@ class ScrollScene extends ScrollWidget {
         return $this->id;
     }
 
-    public function setTween($target, $time = 1, $options = []) {
-        $this->setJs($this->id . '.setTween("' . $target . '",' . $time . ',' . Json::encode($options) . ');');
+    public function setTween($target) {
+        if (is_string($target) && empty($options)) {
+            $this->addJs($this->id . '.setTween(' . $target . ');');
+        } 
+        return $this;
+    }
+    
+    public function setGsapTween($target, $time = 1, $options = []) {
+        
+            $this->addJs($this->id . '.setTween("' . $target . '",' . $time . ',' . Json::encode($options) . ');');
         return $this;
     }
 
@@ -48,13 +56,13 @@ class ScrollScene extends ScrollWidget {
         if ($params === null) {
             $params = ['name' => $this->id];
         }
-        $this->setJs($this->id . '.addIndicators(' . Json::encode($params) . ');');
+        $this->addJs($this->id . '.addIndicators(' . Json::encode($params) . ');');
         return $this;
     }
 
     public function removeIndicators() {
 
-        $this->setJs($this->id . '.removeIndicators();');
+        $this->addJs($this->id . '.removeIndicators();');
         return $this;
     }
 

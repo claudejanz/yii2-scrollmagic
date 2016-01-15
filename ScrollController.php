@@ -19,13 +19,13 @@ class ScrollController extends ScrollWidget {
 
      public function __construct($config = []) {
         parent::init();
-        $this->setJs('var ' . $this->id . ' = new ScrollMagic.Controller('.Json::encode($config).');');
+        $this->addJs('var ' . $this->id . ' = new ScrollMagic.Controller('.Json::encode($config).');');
     }
 
     public function addScene($scenes) {
         foreach ($scenes as $key => $scene) {
 
-            $this->setJs($this->id . '.addScene(' . $scene . ');');
+            $this->addJs($this->id . '.addScene(' . $scene . ');');
         }
     }
 

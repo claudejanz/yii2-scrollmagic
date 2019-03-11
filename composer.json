@@ -12,8 +12,7 @@
     ],
     "require": {
         "yiisoft/yii2": "*",
-        "claudejanz/yii2-gsap": "*",
-        "bower-asset/scrollmagic": "*"
+        "claudejanz/yii2-gsap": "*"
     },
     "autoload": {
         "psr-4": {
